@@ -1,0 +1,74 @@
+.searchbutton,
+.currentlocation {
+  border-radius: 10px;
+}
+.main {
+  margin-top: 30px;
+}
+.headline {
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  font-size: 60px;
+  color: #a5a9a0;
+}
+body {
+  background: #9ca38e !important;
+}
+p {
+  color: #a5a9a0 !important;
+}
+.currentweather {
+  font-size: 200px;
+  color: #bd9a7a;
+}
+.weathericon {
+  font-size: 100px;
+  color: #bd9a7a;
+}
+.Currently {
+  font-size: 40px;
+}
+.location {
+  font-size: 30px;
+}
+.location,
+.day {
+  font-style: italic;
+}
+.Currently,
+.location,
+.day {
+  color: #a5a9a0 !important;
+}
+.currentTemp {
+  font-size: 90px;
+}
+.unitConversion {
+  font-size: 45px;
+}
+.currentTemp,
+.minmax {
+  color: #9ca38e;
+}
+.minmax {
+  font-size: 30px;
+  font-style: italic;
+}
+.dayweather {
+  color: #9ca38e;
+  font-weight: bold;
+}
+.tempnumber {
+  font-style: italic;
+  color: #bd9a7a;
+}
+#location {
+  width: 600px;
+  padding-left: 20px;
+}
+.time {
+  font-size: 30px;
+  color: #a5a9a0;
+}
