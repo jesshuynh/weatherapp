@@ -41,7 +41,7 @@ li {
   color: #bd9a7a;
 }
 .Currently {
-  font-size: 40px;
+  font-size: 25px;
 }
 .location {
   font-size: 30px;
@@ -55,6 +55,7 @@ li {
 .day {
   color: #a5a9a0 !important;
 }
+
 .currentTemp {
   font-size: 64px;
   line-height: 1;
@@ -92,4 +93,11 @@ li {
 }
 #location-input {
   margin-left: 10px;
+}
+
+#description {
+  color: #a5a9a0;
+  font-size: 30px;
+  font-style: italic;
+  text-transform: capitalize;
 }

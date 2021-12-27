@@ -1,5 +1,5 @@
 let now = new Date();
-function formatDate(currently) {
+function formatDate(date) {
   let days = [
     "Sunday",
     "Monday",
@@ -7,18 +7,18 @@ function formatDate(currently) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
-  let day = days[currently.getDay()];
+  let day = days[date.getDay()];
   //let months = ["January","February","March", "April","May","June","July","August", "September","October", "November","December" ];
   //let month = months[currently.getMonth()];
   //let date = currently.getDate();
   //let year = currently.getFullYear();
-  let hours = currently.getHours();
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = currently.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -43,20 +43,30 @@ function showCurrentTemperature(response) {
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = `${roundTemp}°C`;
   console.log(response);
+  let cityElement = document.querySelector("#city");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let descriptionElement = document.querySelector("#description");
+  cityElement.innerHTML = response.data.name;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-function gimmeLocation(event) {
-  event.preventDefault();
-  let locationInput = document.querySelector("#location-input");
-  // displayLocation.innerHTML = locationInput.value;
-  let city = locationInput.value;
-  console.log(city);
+
+function gimmeLocation(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showCurrentTemperature);
 }
-
-let locationSearch = document.querySelector("#location-search");
-locationSearch.addEventListener("submit", gimmeLocation);
-
+function submitCity(event) {
+  event.preventDefault();
+  let locationInput = document.querySelector("#location-input");
+  let city = locationInput.value;
+  gimmeLocation(city);
+}
+let submission = document.querySelector("#location-search");
+submission.addEventListener("submit", submitCity);
 function showCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
@@ -89,3 +99,5 @@ function locationPress() {
 }
 let locationCurrent = document.querySelector("#current-location");
 locationCurrent.addEventListener("click", locationPress);
+
+gimmeLocation("San Francisco");
