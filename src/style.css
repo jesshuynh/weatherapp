@@ -19,6 +19,17 @@ body {
 p {
   color: #a5a9a0 !important;
 }
+ul {
+  font-size: 30px;
+  color: #a5a9a0;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .currentweather {
   font-size: 64px;
   color: #bd9a7a;
@@ -70,7 +81,8 @@ p {
   font-style: italic;
   color: #bd9a7a;
 }
-#location {
+#location,
+#description {
   width: 600px;
   padding-left: 20px;
 }
