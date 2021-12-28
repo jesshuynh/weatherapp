@@ -32,9 +32,11 @@ let displayLocation = document.querySelector("div.location");
 let units = "metric";
 let apiKey = "469896382cb665ae26fd863f7be6bd25";
 let temp;
+//temp is temp in celsius so no need to call it celsiusTemp
 let lan;
 let lon;
 let locationName;
+let celsiusTemp;
 
 function showCurrentTemperature(response) {
   displayLocation.innerHTML = response.data.name;
@@ -42,7 +44,7 @@ function showCurrentTemperature(response) {
   let roundTemp = Math.round(temp);
   console.log(temp);
   let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = `${roundTemp}°C`;
+  temperature.innerHTML = `${roundTemp}`;
   console.log(response);
   let cityElement = document.querySelector("#city");
   let humidityElement = document.querySelector("#humidity");
@@ -78,7 +80,7 @@ function showCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
   let celsiusTemp = Math.round(temp);
-  temperature.innerHTML = `${celsiusTemp}°C`;
+  temperature.innerHTML = celsiusTemp;
 }
 let convertCelsius = document.querySelector("#metric");
 convertCelsius.addEventListener("click", showCelsius);
@@ -87,7 +89,7 @@ function showFarenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
   let farenheitTemp = Math.round(temp * (9 / 5) + 32);
-  temperature.innerHTML = `${farenheitTemp}°F `;
+  temperature.innerHTML = farenheitTemp;
 }
 let convertFarenheit = document.querySelector("#imperial");
 convertFarenheit.addEventListener("click", showFarenheit);

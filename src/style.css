@@ -64,7 +64,14 @@ li {
 .unitConversion {
   position: relative;
   font-size: 20px;
-  top: -30px;
+  top: -10px;
+}
+.unitConversion a .active {
+  color: black;
+  cursor: default;
+}
+.unitConversion a .active:hover {
+  text-decoration: none;
 }
 .currentTemp,
 .minmax {
