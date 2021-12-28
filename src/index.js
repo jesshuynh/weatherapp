@@ -79,6 +79,8 @@ submission.addEventListener("submit", submitCity);
 function showCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
+  convertCelsius.classList.add("active");
+  convertFarenheit.classList.remove("active");
   let celsiusTemp = Math.round(temp);
   temperature.innerHTML = celsiusTemp;
 }
@@ -88,6 +90,8 @@ convertCelsius.addEventListener("click", showCelsius);
 function showFarenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
+  convertCelsius.classList.remove("active");
+  convertFarenheit.classList.add("active");
   let farenheitTemp = Math.round(temp * (9 / 5) + 32);
   temperature.innerHTML = farenheitTemp;
 }

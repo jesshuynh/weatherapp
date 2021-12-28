@@ -66,11 +66,14 @@ li {
   font-size: 20px;
   top: -10px;
 }
-.unitConversion a .active {
-  color: black;
+a:link {
+  text-decoration: none;
+}
+.active {
+  color: #9ca38e;
   cursor: default;
 }
-.unitConversion a .active:hover {
+.active:hover {
   text-decoration: none;
 }
 .currentTemp,
