@@ -18,9 +18,12 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Delius+Swash+Caps&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -41,7 +44,6 @@
           />
         </form>
 
-
         <div class="card-body">
           <div class="row">
             <div class="col-6">
@@ -49,26 +51,33 @@
               <h3 class="time" id="date">time</h3>
               <div class="d-flex weather-temperature">
                 <!-- change to span when change to image and adjust sizing -->
-              <!-- <div class="d-flex justify-content-center" class="float-left">
+                <!-- <div class="d-flex justify-content-center" class="float-left">
               <i class="fas fa-poo-storm currentweather"></i> </div> -->
-              <img src="" alt="weatherpic" id="icon" class="float-left"/>
-              <div class="currentTemp" class="float-left" id="current-temp">temp</div>
-              <span class=unitConversion><a href="#" class="active"id="metric"> °C </a>
-                |<a href="#"id="imperial">°F</a></span>
-              
-             </div>
-             <div id="description"></div>
-              <div class="location" id="city">in San Francisco, CA   </div>
-          </div>
-          <div class="col-6">
-            <ul>
+                <img src="" alt="weatherpic" id="icon" class="float-left" />
+                <div class="currentTemp" class="float-left" id="current-temp">
+                  temp
+                </div>
+                <span class="unitConversion"
+                  ><a href="#" class="active" id="metric"> °C </a> |<a
+                    href="#"
+                    id="imperial"
+                    >°F</a
+                  ></span
+                >
+              </div>
+              <div id="description"></div>
+              <div class="location" id="city">in San Francisco, CA</div>
+            </div>
+            <div class="col-6">
+              <ul>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> m/h</li>
-            </ul>
+              </ul>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-          <div class="card-group">
+        <div class="forecast" id="forecast"></div>
+        <!-- <div class="card-group">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title day">Monday </h5>
@@ -168,10 +177,13 @@
                 <small class="text-muted">Don't forget your SPF!</small>
               </div>
               
-          </div>
+          </div> -->
       </div>
-     <div id=opensource-link> <a href="https://github.com/jesshuynh/weatherapp">Open-source code</a> by Jessica Huynh </div>
+      <div id="opensource-link">
+        <a href="https://github.com/jesshuynh/weatherapp">Open-source code</a>
+        by Jessica Huynh
+      </div>
     </div>
-<script src="src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
