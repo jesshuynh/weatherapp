@@ -51,8 +51,7 @@ li {
   font-style: italic;
 }
 .Currently,
-.location,
-.day {
+.location {
   color: #a5a9a0 !important;
 }
 
@@ -84,11 +83,11 @@ a:link {
   font-size: 30px;
   font-style: italic;
 }
-.dayweather {
+.forecast-description {
   color: #9ca38e;
   font-weight: bold;
 }
-.tempnumber {
+.forecast-temp {
   font-style: italic;
   color: #bd9a7a;
 }
