@@ -125,12 +125,12 @@ function displayForecast() {
 <div class="forecast-date"${day}>
 </div>
 <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="forecast weather" width="100">
-<span class="forecast-temp">
+<p class="forecast-temp">
 <span class="forecast-temp-max"> 18 </span>
 <span class="forecast-temp-min">12 </span>
-</span>`;
+</p></div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast;
+displayForecast();
