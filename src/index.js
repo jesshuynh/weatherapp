@@ -120,7 +120,12 @@ let locationCurrent = document.querySelector("#current-location");
 locationCurrent.addEventListener("click", locationPress);
 
 gimmeLocation("San Francisco");
-
+function formatDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.daily;
@@ -129,9 +134,11 @@ function displayForecast(response) {
     forecastHTML =
       forecastHTML +
       `<div class ="col-2">
-<div class="forecast-date">${forecastDay.dt}
+<div class="forecast-date">${formatDays(forecastDay.dt)}
 </div>
-<img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="forecast weather" width="100">
+<img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" alt="forecast weather" width="100">
 <p class="forecast-temp">
 <span class="forecast-temp-max"> ${forecastDay.temp.max} </span>
 <span class="forecast-temp-min"> ${forecastDay.temp.min}</span>
