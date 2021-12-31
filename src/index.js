@@ -39,7 +39,7 @@ let locationName;
 let celsiusTemp;
 
 function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -120,20 +120,21 @@ let locationCurrent = document.querySelector("#current-location");
 locationCurrent.addEventListener("click", locationPress);
 
 gimmeLocation("San Francisco");
-function displayForecast(coordinates) {
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat"];
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class ="col-2">
-<div class="forecast-date"${day}>
+<div class="forecast-date">${forecastDay.dt}
 </div>
-<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="forecast weather" width="100">
+<img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="forecast weather" width="100">
 <p class="forecast-temp">
-<span class="forecast-temp-max"> 18 </span>
-<span class="forecast-temp-min">12 </span>
+<span class="forecast-temp-max"> ${forecastDay.temp.max} </span>
+<span class="forecast-temp-min"> ${forecastDay.temp.min}</span>
 </p></div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
