@@ -38,6 +38,11 @@ let lon;
 let locationName;
 let celsiusTemp;
 
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showCurrentTemperature(response) {
   displayLocation.innerHTML = response.data.name;
   temp = response.data.main.temp;
@@ -62,6 +67,7 @@ function showCurrentTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function gimmeLocation(city) {
@@ -114,7 +120,7 @@ let locationCurrent = document.querySelector("#current-location");
 locationCurrent.addEventListener("click", locationPress);
 
 gimmeLocation("San Francisco");
-function displayForecast() {
+function displayForecast(coordinates) {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat"];
   let forecastHTML = `<div class="row">`;
@@ -133,4 +139,3 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
