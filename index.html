@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,58 +26,64 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="card main">
-        <div class="headline">What's the weather outside?</div>
-        <form id="location-search">
-          <input
-            type="text"
-            placeholder="Where are you located?"
-            id="location-input"
-          />
-          <input type="submit" value="Search" class="searchbutton" />
-          <input
-            type="submit"
-            value="Current Location"
-            class="currentlocation"
-            id="current-location"
-          />
-        </form>
+    <div class="container p-0">
+      <div class="row justify-content-center no-gutters">
+        <div class="col-8 mx-auto">
+          <div class="main p-3">
+            <div class="headline">What's the weather outside?</div>
+            <form id="location-search">
+              <input
+                type="text"
+                placeholder="Where are you located?"
+                id="location-input"
+              />
+              <input type="submit" value="Search" class="searchbutton" />
+              <input
+                type="submit"
+                value="Current Location"
+                class="currentlocation"
+                id="current-location"
+              />
+            </form>
 
-        <div class="card-body">
-          <div class="row">
-            <div class="col-6">
-              <div class="Currently">Last Updated:</div>
-              <h3 class="time" id="date">time</h3>
-              <div class="d-flex weather-temperature">
-                <!-- change to span when change to image and adjust sizing -->
-                <!-- <div class="d-flex justify-content-center" class="float-left">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <div class="Currently">Last Updated:</div>
+                  <h3 class="time" id="date">time</h3>
+                  <div class="d-flex weather-temperature">
+                    <!-- change to span when change to image and adjust sizing -->
+                    <!-- <div class="d-flex justify-content-center" class="float-left">
               <i class="fas fa-poo-storm currentweather"></i> </div> -->
-                <img src="" alt="weatherpic" id="icon" class="float-left" />
-                <div class="currentTemp" class="float-left" id="current-temp">
-                  temp
+                    <img src="" alt="weatherpic" id="icon" class="float-left" />
+                    <div
+                      class="currentTemp"
+                      class="float-left"
+                      id="current-temp"
+                    >
+                      temp
+                    </div>
+                    <span class="unitConversion"
+                      ><a href="#" class="active" id="metric"> °C </a> |<a
+                        href="#"
+                        id="imperial"
+                        >°F</a
+                      ></span
+                    >
+                  </div>
+                  <div id="description"></div>
+                  <div class="location" id="city">in San Francisco, CA</div>
                 </div>
-                <span class="unitConversion"
-                  ><a href="#" class="active" id="metric"> °C </a> |<a
-                    href="#"
-                    id="imperial"
-                    >°F</a
-                  ></span
-                >
+                <div class="col-6">
+                  <ul>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> m/h</li>
+                  </ul>
+                </div>
               </div>
-              <div id="description"></div>
-              <div class="location" id="city">in San Francisco, CA</div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="forecast" id="forecast">forecast</div>
-        <!-- <div class="card-group">
+            <div class="forecast" id="forecast">forecast</div>
+            <!-- <div class="card-group">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title day">Monday </h5>
@@ -178,10 +184,14 @@
               </div>
               
           </div> -->
+          </div>
+        </div>
       </div>
-      <div id="opensource-link">
-        <a href="https://github.com/jesshuynh/weatherapp">Open-source code</a>
-        by Jessica Huynh
+      <div class="text-center">
+        <div id="opensource-link">
+          <a href="https://github.com/jesshuynh/weatherapp">Open-source code</a>
+          by Jessica Huynh
+        </div>
       </div>
     </div>
     <script src="src/index.js"></script>
